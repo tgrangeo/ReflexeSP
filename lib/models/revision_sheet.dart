@@ -8,6 +8,7 @@ class RevisionSheet {
   final List<String> tags;
   final String criticite;
   final String frequenceUtilisation;
+  final bool isFavorite;
 
   RevisionSheet({
     required this.id,
@@ -19,6 +20,7 @@ class RevisionSheet {
     required this.tags,
     required this.criticite,
     required this.frequenceUtilisation,
+    required this.isFavorite
   });
 
   factory RevisionSheet.fromMap(Map<String, dynamic> data) {
@@ -32,6 +34,7 @@ class RevisionSheet {
       tags: List<String>.from(data['tags'] ?? []),
       criticite: data['criticite'] ?? 'moyenne',
       frequenceUtilisation: data['frequenceUtilisation'] ?? 'moyenne',
+      isFavorite: data['favorite'] ?? '',
     );
   }
 
@@ -46,6 +49,7 @@ class RevisionSheet {
       'tags': tags,
       'criticite': criticite,
       'frequenceUtilisation': frequenceUtilisation,
+      'favorite': isFavorite,
     };
   }
 }
